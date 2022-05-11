@@ -28,6 +28,7 @@
                                 </div>
                                 </div>
                     </section> 
+                    
                     //inserir foreach para listar todos os pedidos.
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src=".../100px180/" alt="Imagem de capa do card">

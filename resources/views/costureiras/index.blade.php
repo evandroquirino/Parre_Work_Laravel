@@ -4,7 +4,7 @@
 @section('content')
 <section class="d-flex justify-content-between ml-2">
     <h1>Lista de Costureiras</h1>
-    <a class="btn btn-secondary mr-5" href="{{ route('dashboard')}}">Voltar para Home</a>
+    <a class="btn btn-secondary mr-2" href="{{ route('dashboard')}}">Voltar para Home</a>
 </section>
     <table class="table">
         <thead>
