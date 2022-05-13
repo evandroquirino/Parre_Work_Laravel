@@ -18,9 +18,8 @@
             @foreach($costureiras as $costureira)
                 <tr>
                     <td>
-                        <a href="">
-                            {{ $costureira->nome }}
-                        </a></td>
+                        {{ $costureira->nome }}
+                    </td>
                     <td>
                         {{ $costureira->telefone }}
                     </td>
@@ -28,11 +27,11 @@
                         {{ $costureira->endereco }}
                     </td>
                     <td style="display: flex">
-                        <a href="" class="btn btn-warning">
+                        <a href="{{ route('costureira.edit', $costureira) }}" class="btn btn-warning">
                             Editar
                         </a>
 
-                        <form action="" method="POST">
+                        <form action="{{ route('costureira.destroy', $costureira) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button 

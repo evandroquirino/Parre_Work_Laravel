@@ -63,7 +63,11 @@ class CostureirasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $costureira = Costureira::find($id);
+
+        return view('costureiras.edit', [
+           'costureira' => $costureira 
+        ]);
     }
 
     /**
@@ -75,7 +79,14 @@ class CostureirasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $costureira = Costureira::find($id);
+
+        $costureira->update([
+            'nome' => $request->nome,
+            'telefone' => $request->telefone,
+            'endereco' => $request->endereco
+        ]);
+        return redirect('/costureiras');
     }
 
     /**
@@ -86,6 +97,8 @@ class CostureirasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $costureira = Costureira::find($id);
+        $costureira->delete();
+        return redirect('/costureiras');
     }
 }

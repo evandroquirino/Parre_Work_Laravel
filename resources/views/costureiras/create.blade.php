@@ -2,7 +2,7 @@
 @section('title', 'Nova Costureira')
 
 @section('content')
-    <h1 class="ml-3">Novo Costureira</h1>
+    <h1 class="ml-3">Nova Costureira</h1>
     <form action="{{ route('costureira.store') }}" method="POST" class="p-5">
     @csrf
         <div class="md-3">

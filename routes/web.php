@@ -30,8 +30,12 @@ Route::middleware([
     Route::prefix('costureiras')->group(function () {
         Route::get('/', [CostureirasController::class, 'index'])->name('costureiras.index');
         Route::get('/costureiras/create', [CostureirasController::class, 'create'])->name('costureiras.create');    
-    
+        Route::get('/costureira/{id}/edit', [CostureirasController::class, 'edit'])->name('costureira.edit');
+       
         Route::post('/costureiras', [CostureirasController::class, 'store'])->name('costureira.store');
+        Route::put('/costureira/{id}', [CostureirasController::class, 'update'])->name('costureira.update');
+        Route::delete('/costureira/{id}', [CostureirasController::class, 'destroy'])->name('costureira.destroy');
+        
     });
 
 });
