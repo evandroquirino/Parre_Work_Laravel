@@ -16,7 +16,7 @@
         </div>
 
         <div class="md-3">
-            <label for="telefone" class="form-label">Telefone</label>
+            <label for="telefone" class="form-label" onkeypress="$(this).mask('(00) 0000-00009')">Telefone</label>
             <input class="form-control" name="telefone" id="telefone" placeholder="Digite o telefone"  required>
         </div>
 

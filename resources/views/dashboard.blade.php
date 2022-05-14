@@ -23,8 +23,9 @@
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Cliente</a>
-                                    <a class="dropdown-item" href="{{ route('costureiras.index') }}">Costura</a>
+                                    <a class="dropdown-item" href="{{ route('costureiras.index') }}">Costureira/facção</a>
                                     <a class="dropdown-item" href="{{ route('personalizacoes.index') }}">Personalização</a>
+                                    <a class="dropdown-item" href="{{ route('tecidos.index') }}">Tipo de Tecido</a>
                                 </div>
                                 </div>
                     </section> 

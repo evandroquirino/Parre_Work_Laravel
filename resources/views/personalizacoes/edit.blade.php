@@ -18,7 +18,7 @@
 
         <div class="md-3">
             <label for="telefone" class="form-label">Telefone</label>
-            <input class="form-control" value="{{ $personalizacao->telefone }}" name="telefone" id="telefone" placeholder="Digite o telefone"  required>
+            <input class="form-control" value="{{ $personalizacao->telefone }}" name="telefone" id="telefone" placeholder="Digite o telefone"  required >
         </div>
 
         <button class="btn btn-success">Editar</button>

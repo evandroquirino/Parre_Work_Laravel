@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CostureirasController;
 use App\Http\Controllers\PersonalizacaoController;
+use App\Http\Controllers\TecidoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,17 @@ Route::middleware([
         Route::post('/', [PersonalizacaoController::class, 'store'])->name('personalizacao.store');
         Route::put('/{id}', [PersonalizacaoController::class, 'update'])->name('personalizacao.update');
         Route::delete('/{id}', [PersonalizacaoController::class, 'destroy'])->name('personalizacao.destroy');
+       
+    });
+
+    Route::prefix('tecidos')->group(function () {
+        Route::get('/', [TecidoController::class, 'index'])->name('tecidos.index');
+        Route::get('/create', [TecidoController::class, 'create'])->name('tecidos.create');    
+        Route::get('/{id}/edit', [TecidoController::class, 'edit'])->name('tecido.edit');
+       
+        Route::post('/', [TecidoController::class, 'store'])->name('tecido.store');
+        Route::put('/{id}', [TecidoController::class, 'update'])->name('tecido.update');
+        Route::delete('/{id}', [TecidoController::class, 'destroy'])->name('tecido.destroy');
        
     });
 
