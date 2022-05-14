@@ -24,7 +24,7 @@
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="#">Cliente</a>
                                     <a class="dropdown-item" href="{{ route('costureiras.index') }}">Costura</a>
-                                    <a class="dropdown-item" href="#">Personalização</a>
+                                    <a class="dropdown-item" href="{{ route('personalizacoes.index') }}">Personalização</a>
                                 </div>
                                 </div>
                     </section> 

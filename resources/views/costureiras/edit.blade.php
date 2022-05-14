@@ -1,8 +1,8 @@
 @extends('layouts.app')
-@section('title', 'Nova Costureira')
+@section('title', 'Editar Costureira')
 
 @section('content')
-    <h1 class="ml-3">Nova Costureira</h1>
+    <h1 class="ml-3">Editar Costureira</h1>
     <form action="{{ route('costureira.update', $costureira) }}" method="POST" class="p-5">
     @csrf
         @method('PUT')
@@ -21,6 +21,6 @@
             <input class="form-control" value="{{ $costureira->endereco }}"name="endereco" id="endereco" placeholder="Digite o endereço"  required>
         </div>
 
-        <button class="btn btn-success">Enviar</button>
+        <button class="btn btn-success">Editar</button>
     </form>
 @endsection
