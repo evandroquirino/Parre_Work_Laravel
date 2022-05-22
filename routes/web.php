@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CostureirasController;
 use App\Http\Controllers\PersonalizacaoController;
@@ -59,6 +60,17 @@ Route::middleware([
         Route::post('/', [TecidoController::class, 'store'])->name('tecido.store');
         Route::put('/{id}', [TecidoController::class, 'update'])->name('tecido.update');
         Route::delete('/{id}', [TecidoController::class, 'destroy'])->name('tecido.destroy');
+       
+    });
+
+    Route::prefix('clientes')->group(function () {
+        Route::get('/', [ClienteController::class, 'index'])->name('clientes.index');
+        Route::get('/create', [ClienteController::class, 'create'])->name('clientes.create');    
+        Route::get('/{id}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
+       
+        Route::post('/', [ClienteController::class, 'store'])->name('cliente.store');
+        Route::put('/{id}', [ClienteController::class, 'update'])->name('cliente.update');
+        Route::delete('/{id}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
        
     });
 
