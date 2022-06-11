@@ -15,7 +15,9 @@
                     @endif
 
                     <section class="d-flex justify-content-between">
+                        <a href="{{ route('pedidos.index') }}">
                             <button class="btn btn-success">NOVO PEDIDO</button>
+                        </a>
                             
                             <div class="dropdown">
                                 <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

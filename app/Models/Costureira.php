@@ -9,4 +9,9 @@ class Costureira extends Model
 {
     protected $fillable = ['nome', 'telefone', 'endereco'];
     use HasFactory;
+
+    public function pedido()
+    {
+        return $this->belongsTo(Pedido::class);
+    }
 }

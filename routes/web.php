@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CostureirasController;
 use App\Http\Controllers\PersonalizacaoController;
 use App\Http\Controllers\TecidoController;
+use App\Http\Controllers\PedidoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +73,17 @@ Route::middleware([
         Route::post('/', [ClienteController::class, 'store'])->name('cliente.store');
         Route::put('/{id}', [ClienteController::class, 'update'])->name('cliente.update');
         Route::delete('/{id}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
+       
+    });
+
+    Route::prefix('pedido')->group(function () {
+        Route::get('/', [PedidoController::class, 'index'])->name('pedidos.index');
+        // Route::get('/create', [PedidoController::class, 'create'])->name('clientes.create');    
+        // Route::get('/{id}/edit', [PedidoController::class, 'edit'])->name('cliente.edit');
+       
+        // Route::post('/', [PedidoController::class, 'store'])->name('cliente.store');
+        // Route::put('/{id}', [PedidoController::class, 'update'])->name('cliente.update');
+        // Route::delete('/{id}', [PedidoController::class, 'destroy'])->name('cliente.destroy');
        
     });
 
