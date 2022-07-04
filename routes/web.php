@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CostureirasController;
+use App\Http\Controllers\EtapaController;
 use App\Http\Controllers\PersonalizacaoController;
 use App\Http\Controllers\TecidoController;
 use App\Http\Controllers\PedidoController;
@@ -73,6 +74,17 @@ Route::middleware([
         Route::post('/', [ClienteController::class, 'store'])->name('cliente.store');
         Route::put('/{id}', [ClienteController::class, 'update'])->name('cliente.update');
         Route::delete('/{id}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
+       
+    });
+
+    Route::prefix('etapas')->group(function () {
+        Route::get('/', [EtapaController::class, 'index'])->name('etapas.index');
+        Route::get('/create', [EtapaController::class, 'create'])->name('etapas.create');    
+        Route::get('/{id}/edit', [EtapaController::class, 'edit'])->name('etapa.edit');
+       
+        Route::post('/', [EtapaController::class, 'store'])->name('etapa.store');
+        Route::put('/{id}', [EtapaController::class, 'update'])->name('etapa.update');
+        Route::delete('/{id}', [EtapaController::class, 'destroy'])->name('etapa.destroy');
        
     });
 

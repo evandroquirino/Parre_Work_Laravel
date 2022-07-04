@@ -28,6 +28,7 @@
                                     <a class="dropdown-item" href="{{ route('costureiras.index') }}">Costureira/facção</a>
                                     <a class="dropdown-item" href="{{ route('personalizacoes.index') }}">Personalização</a>
                                     <a class="dropdown-item" href="{{ route('tecidos.index') }}">Tipo de Tecido</a>
+                                    <a class="dropdown-item" href="{{ route('etapas.index') }}">Etapas da Produção</a>
                                 </div>
                                 </div>
                     </section> 
