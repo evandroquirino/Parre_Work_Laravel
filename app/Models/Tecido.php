@@ -9,4 +9,9 @@ class Tecido extends Model
 {
     protected $fillable = ['nome'];
     use HasFactory;
+
+    public function pedido()
+    {
+        return $this->belongsTo(Pedido::class);
+    }
 }

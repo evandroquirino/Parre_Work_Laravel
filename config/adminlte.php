@@ -191,7 +191,7 @@ return [
     'dashboard_url' => 'dashboard',
     'logout_url' => 'logout',
     'login_url' => 'login',
-    'register_url' => false,
+    'register_url' => 'register',
     'password_reset_url' => false,
     'password_email_url' => 'password/email',
     'profile_url' => false,
@@ -243,7 +243,7 @@ return [
         // ],
         [
             'text'        => 'Todos os Pedidos',
-            'url'         => 'pedido',
+            'url'         => 'pedidos',
             'icon'        => 'fa-thin fa-users',
         ],
         [

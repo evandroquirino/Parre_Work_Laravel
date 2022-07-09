@@ -17,9 +17,10 @@ class CreatePedidosTable extends Migration
             $table->id();
             $table->string('nome', 100);
             $table->foreignId('costureira_id')->constrained('costureiras');
-            // $table->foreignId('personalizacao_id')->constrained('personalizacaos_id');
-            // $table->foreignId('tecido_id')->constrained('tecidos');
-            // $table->foreignId('cliente_id')->constrained('clientes');
+            $table->foreignId('personalizacao_id')->constrained('personalizacaos');
+            $table->foreignId('tecido_id')->constrained('tecidos');
+            $table->foreignId('cliente_id')->constrained('clientes');
+            $table->foreignId('etapa_id')->constrained('etapas');
             $table->string('cor', 50);
             $table->string('detalhes', 150);
             $table->timestamps();

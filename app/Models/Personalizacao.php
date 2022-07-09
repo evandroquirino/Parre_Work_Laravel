@@ -9,4 +9,11 @@ class Personalizacao extends Model
 {
     protected $fillable = ['nome', 'responsavel', 'telefone'];
     use HasFactory;
+
+    public function pedido()
+    {
+        return $this->belongsTo(Pedido::class);
+    }
 }
+
+

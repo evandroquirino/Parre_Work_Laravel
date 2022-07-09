@@ -11,8 +11,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Costureira</th>
+                <th scope="col">Nome/Pedido</th>
                 <th scope="col">Cor</th>
+                <th scope="col">Tecido</th>
                 <th scope="col">Detalhes</th>
 
             </tr>
@@ -21,10 +22,13 @@
             @foreach($pedidos as $pedido)
                 <tr>
                     <td>
-                        {{ $pedido->costureira_id }}
+                        {{ $pedido->nome }}
                     </td>
                     <td>
                         {{ $pedido->cor }}
+                    </td>
+                    <td>
+                        {{ $pedido->tecido_id }}
                     </td>
                     <td>
                         {{ $pedido->detalhes }}
@@ -48,7 +52,7 @@
                 </tr>
             @endforeach
         </tbody>
-        <a class="btn btn-success ml-2" href="">Novo Cliente</a>
+        <a class="btn btn-success ml-2" href="{{ route('pedidos.create') }}">Novo Pedido</a>
     </table>
     
 @endsection

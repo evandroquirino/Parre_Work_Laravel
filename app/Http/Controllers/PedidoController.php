@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
+use App\Models\Costureira as ModelsCostureira;
+use App\Models\Etapa;
 use App\Models\Pedido;
+use App\Models\Personalizacao;
+use App\Models\Tecido;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -15,8 +20,10 @@ class PedidoController extends Controller
     public function index()
     {
         $pedidos = Pedido::get();
+        $costureiras = ModelsCostureira::get();
         return view('pedidos.index', [
-            'pedidos' => $pedidos
+            'pedidos' => $pedidos,
+            'costureiras' => $costureiras
         ]);
     }
 
@@ -27,8 +34,20 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        //
+        $costureiras = ModelsCostureira::get();
+        $personalizacaos = Personalizacao::get();
+        $tecidos = Tecido::get();
+        $clientes = Cliente::get();
+        $etapas = Etapa::get();
+        return view('pedidos.create', [
+            'costureiras' => $costureiras,
+            'personalizacaos' => $personalizacaos,
+            'tecidos' => $tecidos,
+            'clientes' => $clientes,
+            'etapas' => $etapas
+        ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -38,7 +57,10 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dados = $request->except('_token');
+        Pedido::create($dados);
+
+        return redirect( '/pedidos' );
     }
 
     /**

@@ -3,7 +3,7 @@
 @section('content_header')
     <section class="d-flex justify-content-between">
         <a href="{{ route('pedidos.index') }}">
-            <button class="btn btn-success">NOVO PEDIDO</button>
+            <button class="btn btn-success">PEDIDOS</button>
         </a>
             
             <div class="dropdown">
