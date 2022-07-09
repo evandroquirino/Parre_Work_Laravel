@@ -1,10 +1,12 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 @section('title', 'Cadastro de tipo de personalização')
 
 @section('content')
 <section class="d-flex justify-content-between ml-2">
     <h1>Lista de Personalizações</h1>
-    <a class="btn btn-secondary mr-2" href="{{ route('dashboard')}}">Voltar para Home</a>
+    <div class="mt-2">
+        <a class="btn btn-secondary  mr-2" href="{{ route('dashboard')}}">Voltar para Home</a>
+    </div>    
 </section>
     <table class="table">
         <thead>
