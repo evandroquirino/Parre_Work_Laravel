@@ -22,7 +22,7 @@
             @foreach($pedidos as $pedido)
                 <tr>
                     <td>
-                        {{ $pedido->nome }}
+                        <a href="{{ route('pedidos.show', $pedido) }}">{{ $pedido->nome }}</a> 
                     </td>
                     <td>
                         {{ $pedido->cor }}

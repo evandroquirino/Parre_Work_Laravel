@@ -20,10 +20,8 @@ class PedidoController extends Controller
     public function index()
     {
         $pedidos = Pedido::get();
-        $costureiras = ModelsCostureira::get();
         return view('pedidos.index', [
-            'pedidos' => $pedidos,
-            'costureiras' => $costureiras
+            'pedidos' => $pedidos
         ]);
     }
 
@@ -71,7 +69,9 @@ class PedidoController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('pedidos.show', [
+            'pedido' => Pedido::find($id)
+        ]);
     }
 
     /**

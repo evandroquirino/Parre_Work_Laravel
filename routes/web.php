@@ -90,7 +90,8 @@ Route::middleware([
 
     Route::prefix('pedidos')->group(function () {
         Route::get('/', [PedidoController::class, 'index'])->name('pedidos.index');
-        Route::get('/create', [PedidoController::class, 'create'])->name('pedidos.create');    
+        Route::get('/create', [PedidoController::class, 'create'])->name('pedidos.create'); 
+        Route::get('/{id}', [PedidoController::class, 'show'])->name('pedidos.show');    
         // Route::get('/{id}/edit', [PedidoController::class, 'edit'])->name('pedido.edit');
        
         Route::post('/', [PedidoController::class, 'store'])->name('pedido.store');
