@@ -12,11 +12,41 @@
             <div class="d-flex justify-content-between">
                 <div>
                     <p><strong>Nome</strong>: {{ $pedido->nome }}</p>
-                    <p><strong>Cliente</strong>: {{ $pedido->cliente_id }}</p>
-                    <p><strong>Etapa</strong>: {{ $pedido->etapa_id }}</p>
-                    <p><strong>Costureira</strong>: {{ $pedido->costureira_id }}</p>
-                    <p><strong>Personalização</strong>: {{ $pedido->personalizacao_id }}</p>
-                    <p><strong>Tecido</strong>: {{ $pedido->tecido_id }}</p>
+                    <p><strong>Cliente</strong>: 
+                        @foreach ($cliente as $cliente)
+                            @if ($cliente->id == $pedido->cliente_id)
+                                {{ $cliente->nome }}
+                            @endif
+                        @endforeach 
+                    </p>
+                    <p><strong>Etapa</strong>: 
+                        @foreach ($etapa as $etapa)
+                            @if ($etapa->id == $pedido->etapa_id)
+                                {{ $etapa->nome }}
+                            @endif
+                        @endforeach 
+                    </p>
+                    <p><strong>Costureira</strong>: 
+                        @foreach ($costureira as $costureira)
+                            @if ($costureira->id == $pedido->costureira_id)
+                                {{ $costureira->nome }}
+                            @endif
+                        @endforeach 
+                    </p>
+                    <p><strong>Personalização</strong>: 
+                        @foreach ($personalizacao as $personalizacao)
+                            @if ($personalizacao->id == $pedido->personalizacao_id)
+                                {{ $personalizacao->nome }}
+                            @endif
+                        @endforeach 
+                    </p>
+                    <p><strong>Tecido</strong>: 
+                        @foreach ($tecido as $tecido)
+                            @if ($tecido->id == $pedido->tecido_id)
+                                {{ $tecido->nome }}
+                            @endif
+                        @endforeach 
+                    </p>
                     <p><strong>Cor</strong>: {{ $pedido->cor }}</p>
                     <p><strong>Detalhes</strong>: {{ $pedido->detalhes }}</p>
 

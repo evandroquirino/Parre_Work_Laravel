@@ -69,9 +69,13 @@ class PedidoController extends Controller
      */
     public function show($id)
     {
-        return view('pedidos.show', [
-            'pedido' => Pedido::find($id)
-        ]);
+        $pedido = Pedido::find($id);
+        $tecido = Tecido::all();
+        $cliente = Cliente::all();
+        $etapa = Etapa::all();
+        $costureira = ModelsCostureira::all();
+        $personalizacao = Personalizacao::all();
+        return view('pedidos.show', compact('pedido', 'tecido', 'cliente', 'etapa', 'costureira', 'personalizacao'));
     }
 
     /**
