@@ -14,7 +14,7 @@ class PersonalizacaoController extends Controller
      */
     public function index()
     {
-        $personalizacoes = Personalizacao::get();
+        $personalizacoes = Personalizacao::orderBy('nome', 'asc')->get();
         return view('personalizacoes.index', [
             'personalizacoes' => $personalizacoes
         ]);

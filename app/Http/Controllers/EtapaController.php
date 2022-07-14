@@ -14,7 +14,7 @@ class EtapaController extends Controller
      */
     public function index()
     {
-        $etapas = Etapa::get();
+        $etapas = Etapa::orderBy('nome', 'asc')->get();
         return view('etapasProducao.index', [
             'etapas' => $etapas
         ]);

@@ -14,7 +14,7 @@ class TecidoController extends Controller
      */
     public function index()
     {
-        $tecidos = Tecido::get();
+        $tecidos = Tecido::orderBy('nome', 'asc')->get();
         return view('tecidos.index', [
             'tecidos' => $tecidos
         ]);

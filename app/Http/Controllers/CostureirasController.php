@@ -15,7 +15,7 @@ class CostureirasController extends Controller
      */
     public function index()
     {
-        $costureiras = Costureira::get();
+        $costureiras = Costureira::orderBy('nome', 'asc')->get();
         return view('costureiras.index', [
             'costureiras' => $costureiras
         ]);
