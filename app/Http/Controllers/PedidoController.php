@@ -19,10 +19,10 @@ class PedidoController extends Controller
      */
     public function index()
     {
-        $pedidos = Pedido::get();
-        return view('pedidos.index', [
-            'pedidos' => $pedidos
-        ]);
+        // $pedidos = Pedido::with('tecido')->orderBy('nome', 'asc')->get();
+        $pedidos = Pedido::all();
+        $tecidos = Tecido::all();
+        return view('pedidos.index', compact('pedidos', 'tecidos'));
     }
 
     /**
@@ -32,11 +32,11 @@ class PedidoController extends Controller
      */
     public function create()
     {
-        $costureiras = ModelsCostureira::get();
-        $personalizacaos = Personalizacao::get();
-        $tecidos = Tecido::get();
-        $clientes = Cliente::get();
-        $etapas = Etapa::get();
+        $costureiras = ModelsCostureira::orderBy('nome', 'asc')->get();
+        $personalizacaos = Personalizacao::orderBy('nome', 'asc')->get();
+        $tecidos = Tecido::orderBy('nome', 'asc')->get();
+        $clientes = Cliente::orderBy('nome', 'asc')->get();
+        $etapas = Etapa::orderBy('nome', 'asc')->get();
         return view('pedidos.create', [
             'costureiras' => $costureiras,
             'personalizacaos' => $personalizacaos,

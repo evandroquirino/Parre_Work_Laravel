@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($pedidos as $pedido)
+            @forelse ($pedidos as $pedido)
                 <tr>
                     <td>
                         <a href="{{ route('pedidos.show', $pedido) }}">{{ $pedido->nome }}</a> 
@@ -28,7 +28,11 @@
                         {{ $pedido->cor }}
                     </td>
                     <td>
-                        {{ $pedido->tecido_id }}
+                        @foreach ($tecidos as $tecido)
+                            @if ($tecido->id == $pedido->tecido_id)
+                                {{ $tecido->nome }}
+                            @endif
+                        @endforeach                        
                     </td>
                     <td>
                         {{ $pedido->detalhes }}
@@ -50,9 +54,15 @@
                         </form>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="4">
+                        Nenhum pedido cadastrado
+                    </td>
+                </tr>
+            @endforelse
         </tbody>
-        <a class="btn btn-success ml-2" href="{{ route('pedidos.create') }}">Novo Pedido</a>
+        <a class="btn btn-success ml-2 mb-2" href="{{ route('pedidos.create') }}">Novo Pedido</a>
     </table>
     
 @endsection
