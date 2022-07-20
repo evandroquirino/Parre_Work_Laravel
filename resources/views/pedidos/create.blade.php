@@ -79,7 +79,125 @@
                 <label for="image">Layout</label>
                 <input type="file" class="form-control-file" id="imagem" name="imagem">
             </div>
-            <!-- <botton class="btn btn-warning btn-sm">Grade/Tamanhos</botton> -->
+        </div>
+        <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Camiseta</h5><br/>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">PP </label>
+                        <input class="form-control w-50" type="number" id="camisetaPP" name="camisetaPP">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">P </label>
+                        <input class="form-control w-50" type="number" id="camisetaP" name="camisetaP">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">M </label>
+                        <input class="form-control w-50" type="number" id="camisetaM" name="camisetaM">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">G </label>
+                        <input class="form-control w-50" type="number" id="camisetaG" name="camisetaG">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">GG </label>
+                        <input class="form-control w-50" type="number" id="camisetaGG" name="camisetaGG">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">XG </label>
+                        <input class="form-control w-50" type="number" id="camisetaXG" name="camisetaXG">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">EXG </label>
+                        <input class="form-control w-50" type="number" id="camisetaEXG" name="camisetaEXG">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">XGG </label>
+                        <input class="form-control w-50" type="number" id="camisetaXGG" name="camisetaXGG">
+                    </div>
+                    <div class="d-flex">
+                        <label for="typeNumber" class="col align-self-center">EXGG </label>
+                        <input class="form-control w-50" type="number" id="camisetaEXGG" name="camisetaEXGG">
+                    </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Baby Look</h5><br/>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">PP </label>
+                    <input class="form-control w-50" type="number" id="babyPP" name="babyPP">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">P </label>
+                    <input class="form-control w-50" type="number" id="babyP" name="babyP">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">M </label>
+                    <input class="form-control w-50" type="number" id="babyM" name="babyM">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">G </label>
+                    <input class="form-control w-50" type="number" id="babyG" name="babyG">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">GG </label>
+                    <input class="form-control w-50" type="number" id="babyGG" name="babyGG">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">XG </label>
+                    <input class="form-control w-50" type="number" id="babyXG" name="babyXG">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">EXG </label>
+                    <input class="form-control w-50" type="number" id="babyEXG" name="babyEXG">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">XGG </label>
+                    <input class="form-control w-50" type="number" id="babyXGG" name="babyXGG">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Infantil</h5><br/>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">02 </label>
+                    <input class="form-control w-50" type="number" id="infantil02" name="infantil02">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">04 </label>
+                    <input class="form-control w-50" type="number" id="infantil04" name="infantil04">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">06 </label>
+                    <input class="form-control w-50" type="number" id="infantil06" name="infantil06">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">08 </label>
+                    <input class="form-control w-50" type="number" id="infantil08" name="infantil08">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">10 </label>
+                    <input class="form-control w-50" type="number" id="infantil10" name="infantil10">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">12 </label>
+                    <input class="form-control w-50" type="number" id="infantil12" name="infantil12">
+                </div>
+                <div class="d-flex">
+                    <label for="typeNumber" class="col align-self-center">14 </label>
+                    <input class="form-control w-50" type="number" id="infantil14" name="infantil14">
+                </div>
+            </div>
+            </div>
+        </div>
         </div>
 
         <button class="btn btn-success">Enviar</button>
