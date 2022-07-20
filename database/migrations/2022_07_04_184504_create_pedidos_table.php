@@ -15,14 +15,16 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 100);
+            $table->string('nome', 100)->nullable();
             $table->foreignId('costureira_id')->constrained('costureiras');
             $table->foreignId('personalizacao_id')->constrained('personalizacaos');
             $table->foreignId('tecido_id')->constrained('tecidos');
             $table->foreignId('cliente_id')->constrained('clientes');
             $table->foreignId('etapa_id')->constrained('etapas');
-            $table->string('cor', 50);
-            $table->string('detalhes', 150);
+            $table->string('cor', 50)->nullable();
+            $table->string('detalhes', 150)->nullable();
+            $table->string('imagem',50)->nullable();
+            $table->date('data_pedido')->nullable();
             $table->timestamps();
         });
     }

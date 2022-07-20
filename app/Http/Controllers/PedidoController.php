@@ -55,8 +55,30 @@ class PedidoController extends Controller
      */
     public function store(Request $request)
     {
-        $dados = $request->except('_token');
-        Pedido::create($dados);
+        $pedido = new Pedido();
+
+        $pedido->nome = $request->nome;
+        $pedido->costureira_id = $request->costureira_id;
+        $pedido->personalizacao_id = $request->personalizacao_id;
+        $pedido->tecido_id = $request->tecido_id;
+        $pedido->cliente_id = $request->cliente_id;
+        $pedido->etapa_id = $request->etapa_id;
+        $pedido->cor = $request->cor;
+        $pedido->detalhes = $request->detalhes;
+        $pedido->imagem = $request->imagem;
+        $pedido->data_pedido = $request->data_pedido;
+        // Image Upload
+        if($request->hasFile('imagem')) {
+            $image = $request->file('imagem');
+            $numeroRandomico = rand(0000,9999);
+            $diretorio = "img/layouts";
+            $extensao = $image->guessClientExtension();
+            $nomeImagem = "layout_".$numeroRandomico.".".$extensao;
+            $image->move($diretorio, $nomeImagem);
+            $pedido->imagem = $nomeImagem;
+        }
+
+        $pedido->save();
 
         return redirect( '/pedidos' );
     }
@@ -75,6 +97,9 @@ class PedidoController extends Controller
         $etapa = Etapa::all();
         $costureira = ModelsCostureira::all();
         $personalizacao = Personalizacao::all();
+
+        $pedido->data_pedido = date('d/m/Y', strtotime($pedido->data_pedido));
+
         return view('pedidos.show', compact('pedido', 'tecido', 'cliente', 'etapa', 'costureira', 'personalizacao'));
     }
 
