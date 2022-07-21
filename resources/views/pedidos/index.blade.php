@@ -15,7 +15,7 @@
                 <th scope="col">Cor</th>
                 <th scope="col">Tecido</th>
                 <th scope="col">Detalhes</th>
-
+                <th scope="col">Total</th>
             </tr>
         </thead>
         <tbody>
@@ -36,6 +36,9 @@
                     </td>
                     <td>
                         {{ $pedido->detalhes }}
+                    </td>
+                    <td>
+                        <p>{{ App\Http\Controllers\PedidoController::totaldePecas($pedido->id) }} </p>
                     </td>
                     <td style="display: flex">
                         <a href="" class="btn btn-warning">

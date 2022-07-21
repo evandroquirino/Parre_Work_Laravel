@@ -160,5 +160,13 @@ class PedidoController extends Controller
     {
         //
     }
+
+    public static function totaldePecas($id)
+    {
+        $pedido = Pedido::find($id);
+        $total = 0;
+        $total += $pedido->camisetaPP + $pedido->camisetaP + $pedido->camisetaM + $pedido->camisetaG + $pedido->camisetaGG + $pedido->camisetaXG + $pedido->camisetaEXG + $pedido->camisetaXGG + $pedido->camisetaEXGG + $pedido->babyPP + $pedido->babyP + $pedido->babyM + $pedido->babyG + $pedido->babyGG + $pedido->babyXG + $pedido->babyEXG + $pedido->babyXGG + $pedido->infantil02 + $pedido->infantil04 + $pedido->infantil06 + $pedido->infantil08 + $pedido->infantil10 + $pedido->infantil12 + $pedido->infantil14;
+        return $total;
+    }
 }
 

@@ -49,6 +49,7 @@
                     </p>
                     <p><strong>Cor</strong>: {{ $pedido->cor }}</p>
                     <p><strong>Detalhes</strong>: {{ $pedido->detalhes }}</p>
+                    <p><strong>Total de peças</strong>: {{ App\Http\Controllers\PedidoController::totaldePecas($pedido->id) }}</p>
                     <p><strong>Data do pedido</strong>: {{ $pedido->data_pedido }}</p>
 
                     <br>
