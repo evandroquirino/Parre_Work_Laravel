@@ -20,7 +20,7 @@ class PedidoController extends Controller
     public function index()
     {
         // $pedidos = Pedido::with('tecido')->orderBy('nome', 'asc')->get();
-        $pedidos = Pedido::all();
+        $pedidos = Pedido::orderBy('created_at', 'desc')->get();
         $tecidos = Tecido::all();
         return view('pedidos.index', compact('pedidos', 'tecidos'));
     }
