@@ -96,7 +96,7 @@ Route::middleware([
        
         Route::post('/', [PedidoController::class, 'store'])->name('pedido.store');
         // Route::put('/{id}', [PedidoController::class, 'update'])->name('pedido.update');
-        // Route::delete('/{id}', [PedidoController::class, 'destroy'])->name('pedido.destroy');
+        Route::delete('/{id}', [PedidoController::class, 'destroy'])->name('pedido.destroy');
        
     });
 

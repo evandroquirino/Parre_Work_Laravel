@@ -45,7 +45,7 @@
                             Editar
                         </a>
 
-                        <form action="" method="POST">
+                        <form action="{{ route('pedido.destroy', $pedido) }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button 
