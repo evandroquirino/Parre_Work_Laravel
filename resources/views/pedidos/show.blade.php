@@ -53,7 +53,139 @@
 
                     <br>
                 </div> 
-                <a class="card col-md-3 h-100" href="/img/layouts/{{$pedido->imagem}}"> 
+                <div>
+                <table class="table table-striped table-sm table-dark">
+                    <thead>
+                        <tr>
+                        <th scope="col">Camiseta</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">PP</th>
+                        <td>{{ $pedido->camisetaPP }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">P</th>
+                        <td>{{ $pedido->camisetaP }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">M</th>
+                        <td>{{ $pedido->camisetaM }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">G</th>
+                        <td>{{ $pedido->camisetaG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">GG</th>
+                        <td>{{ $pedido->camisetaGG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">XG</th>
+                        <td>{{ $pedido->camisetaXG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">EXG</th>
+                        <td>{{ $pedido->camisetaEXG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">XGG</th>
+                        <td>{{ $pedido->camisetaXGG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">EXGG</th>
+                        <td>{{ $pedido->camisetaEXGG }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div>
+                <table class="table table-striped table-sm table-dark">
+                    <thead>
+                        <tr>
+                        <th scope="col">Baby Look</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">PP</th>
+                        <td>{{ $pedido->babyPP }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">P</th>
+                        <td>{{ $pedido->babyP }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">M</th>
+                        <td>{{ $pedido->babyM }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">G</th>
+                        <td>{{ $pedido->babyG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">GG</th>
+                        <td>{{ $pedido->babyGG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">XG</th>
+                        <td>{{ $pedido->babyXG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">EXG</th>
+                        <td>{{ $pedido->babyEXG }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">XGG</th>
+                        <td>{{ $pedido->babyXGG }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <div>
+                <table class="table table-striped table-sm table-dark">
+                    <thead>
+                        <tr>
+                        <th scope="col">Infantil</th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">02</th>
+                        <td>{{ $pedido->infantil02 }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">04</th>
+                        <td>{{ $pedido->infantil04 }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">06</th>
+                        <td>{{ $pedido->infantil06 }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">08</th>
+                        <td>{{ $pedido->infantil08 }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">10</th>
+                        <td>{{ $pedido->infantil10 }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">12</th>
+                        <td>{{ $pedido->infantil12 }}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">14</th>
+                        <td>{{ $pedido->infantil14 }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+                <a class="card col-md-3 w-100 h-100" href="/img/layouts/{{$pedido->imagem}}"> 
                     <img src="/img/layouts/{{$pedido->imagem}}" alt="{{ $pedido->nome }}">
                 </a>
             </div>  
@@ -65,3 +197,4 @@
     </div>
     
 @endsection
+

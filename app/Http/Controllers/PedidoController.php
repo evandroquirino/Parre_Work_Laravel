@@ -67,6 +67,30 @@ class PedidoController extends Controller
         $pedido->detalhes = $request->detalhes;
         $pedido->imagem = $request->imagem;
         $pedido->data_pedido = $request->data_pedido;
+        $pedido->camisetaPP = $request->camisetaPP;
+        $pedido->camisetaP = $request->camisetaP;
+        $pedido->camisetaM = $request->camisetaM;
+        $pedido->camisetaG = $request->camisetaG;
+        $pedido->camisetaGG = $request->camisetaGG;
+        $pedido->camisetaXG = $request->camisetaXG;
+        $pedido->camisetaEXG = $request->camisetaEXG;
+        $pedido->camisetaXGG = $request->camisetaXGG;
+        $pedido->camisetaEXGG = $request->camisetaEXGG;
+        $pedido->babyPP = $request->babyPP;
+        $pedido->babyP = $request->babyP;
+        $pedido->babyM = $request->babyM;
+        $pedido->babyG = $request->babyG;
+        $pedido->babyGG = $request->babyGG;
+        $pedido->babyXG = $request->babyXG;
+        $pedido->babyEXG = $request->babyEXG;
+        $pedido->babyXGG = $request->babyXGG;
+        $pedido->infantil02 = $request->infantil02;
+        $pedido->infantil04 = $request->infantil04;
+        $pedido->infantil06 = $request->infantil06;
+        $pedido->infantil08 = $request->infantil08;
+        $pedido->infantil10 = $request->infantil10;
+        $pedido->infantil12 = $request->infantil12;
+        $pedido->infantil14 = $request->infantil14;
         // Image Upload
         if($request->hasFile('imagem')) {
             $image = $request->file('imagem');
@@ -137,3 +161,4 @@ class PedidoController extends Controller
         //
     }
 }
+

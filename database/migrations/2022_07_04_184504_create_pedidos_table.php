@@ -25,6 +25,30 @@ class CreatePedidosTable extends Migration
             $table->string('detalhes', 150)->nullable();
             $table->string('imagem',50)->nullable();
             $table->date('data_pedido')->nullable();
+            $table->string('camisetaPP')->nullable();
+            $table->string('camisetaP')->nullable();
+            $table->string('camisetaM')->nullable();
+            $table->string('camisetaG')->nullable();
+            $table->string('camisetaGG')->nullable();
+            $table->string('camisetaXG')->nullable();
+            $table->string('camisetaEXG')->nullable();
+            $table->string('camisetaXGG')->nullable();
+            $table->string('camisetaEXGG')->nullable();
+            $table->string('babyPP')->nullable();
+            $table->string('babyP')->nullable();
+            $table->string('babyM')->nullable();
+            $table->string('babyG')->nullable();
+            $table->string('babyGG')->nullable();
+            $table->string('babyXG')->nullable();
+            $table->string('babyEXG')->nullable();
+            $table->string('babyXGG')->nullable();
+            $table->string('infantil02')->nullable();
+            $table->string('infantil04')->nullable();
+            $table->string('infantil06')->nullable();
+            $table->string('infantil08')->nullable();
+            $table->string('infantil10')->nullable();
+            $table->string('infantil12')->nullable();
+            $table->string('infantil14')->nullable();
             $table->timestamps();
         });
     }
@@ -39,3 +63,4 @@ class CreatePedidosTable extends Migration
         Schema::dropIfExists('pedidos');
     }
 }
+
