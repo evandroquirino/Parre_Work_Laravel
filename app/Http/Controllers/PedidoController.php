@@ -150,39 +150,57 @@ class PedidoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $pedido = Pedido::find($id);
+       $pedido =  Pedido::find($request->id);
+            $pedido->nome = $request->nome;
+            $pedido->costureira_id = $request->costureira_id;
+            $pedido->personalizacao_id = $request->personalizacao_id;
+            $pedido->tecido_id = $request->tecido_id;
+            $pedido->cliente_id = $request->cliente_id;
+            $pedido->etapa_id = $request->etapa_id;
+            $pedido->cor = $request->cor;
+            $pedido->detalhes = $request->detalhes;
+            $pedido->imagem = $request->imagem; 
+            $pedido->data_pedido = $request->data_pedido;
+            $pedido->camisetaPP = $request->camisetaPP;
+            $pedido->camisetaP = $request->camisetaP;
+            $pedido->camisetaM = $request->camisetaM;
+            $pedido->camisetaG = $request->camisetaG;
+            $pedido->camisetaGG = $request->camisetaGG;
+            $pedido->camisetaXG = $request->camisetaXG;
+            $pedido->camisetaEXG = $request->camisetaEXG;
+            $pedido->camisetaXGG = $request->camisetaXGG;
+            $pedido->camisetaEXGG = $request->camisetaEXGG;
+            $pedido->babyPP = $request->babyPP;
+            $pedido->babyP = $request->babyP;
+            $pedido->babyM = $request->babyM;
+            $pedido->babyG = $request->babyG;
+            $pedido->babyGG = $request->babyGG;
+            $pedido->babyXG = $request->babyXG;
+            $pedido->babyEXG = $request->babyEXG;
+            $pedido->babyXGG = $request->babyXGG;
+            $pedido->infantil02 = $request->infantil02;
+            $pedido->infantil04 = $request->infantil04;
+            $pedido->infantil06 = $request->infantil06;
+            $pedido->infantil08 = $request->infantil08;
+            $pedido->infantil10 = $request->infantil10;
+            $pedido->infantil12 = $request->infantil12;
+            $pedido->infantil14 = $request->infantil14;
+            
+            if($request->hasFile('imagem')) {
+                $image = $request->file('imagem');
+                $numeroRandomico = rand(0000,9999);
+                $diretorio = "img/layouts";
+                $extensao = $image->guessClientExtension();
+                $nomeImagem = "layout_".$numeroRandomico.".".$extensao;
+                $image->move($diretorio, $nomeImagem);
+                $pedido->imagem = $nomeImagem;
+            }
 
-        $pedido->nome = $request->nome;
-        $pedido->costureira_id = $request->costureira_id;
-        $pedido->personalizacao_id = $request->personalizacao_id;
-        $pedido->tecido_id = $request->tecido_id;
-        $pedido->cliente_id = $request->cliente_id;
-        $pedido->etapa_id = $request->etapa_id;
-        $pedido->cor = $request->cor;
-        $pedido->detalhes = $request->detalhes;
-        $pedido->imagem = $request->imagem;
-        $pedido->data_pedido = $request->data_pedido;
-        $pedido->camisetaPP = $request->camisetaPP;
-        $pedido->camisetaP = $request->camisetaP;
-        $pedido->camisetaM = $request->camisetaM;
-        $pedido->camisetaG = $request->camisetaG;
-        $pedido->camisetaGG = $request->camisetaGG;
-        $pedido->camisetaXG = $request->camisetaXG;
-        $pedido->camisetaEXG = $request->camisetaEXG;
-        $pedido->camisetaXGG = $request->camisetaXGG;
-        $pedido->camisetaEXGG = $request->camisetaEXGG;
-        $pedido->babyPP = $request->babyPP;
-        $pedido->babyP = $request->babyP;
-        $pedido->babyM = $request->babyM;
-        $pedido->babyG = $request->babyG;
-        $pedido->babyGG = $request->babyGG;
-        $pedido->babyXG = $request->babyXG;
-        $pedido->babyEXG = $request->babyEXG;
-        $pedido->babyXGG = $request->babyXGG;
+        $pedido->update();
+        return redirect('/pedidos');
 
-        return redirect( '/pedidos' );
     }
 
     /**

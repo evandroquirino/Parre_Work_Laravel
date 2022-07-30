@@ -5,7 +5,7 @@
     <h1 class="ml-3">Editar Pedido</h1>
     <form action="{{ route('pedido.update', $pedido) }}" method="POST" enctype="multipart/form-data" class="p-5">
     @csrf
-
+    @method('PUT')
         <div class="md-3">
             <div class="d-flex justify-content-between md-3">
             <label for="nome" class="form-label" >Nome/Apelido</label>
@@ -77,7 +77,12 @@
 
         <div class="d-flex mt-3 mb-2  justify-content-between">
             <div>
+                <div>
                 <label for="image">Layout</label>
+                </div>
+                <a href="/img/layouts/{{ $pedido->imagem }}">
+                <img src="/img/layouts/{{ $pedido->imagem }}" alt="{{ $pedido->nome }}" class="w-25">
+                </a>
                 <input type="file" class="form-control-file" id="imagem" name="imagem">
             </div>
         </div>
@@ -201,7 +206,7 @@
         </div>
         </div>
 
-        <button class="btn btn-success">Enviar</button>
+        <button class="btn btn-success">Editar</button>
     </form>
 @endsection
 
