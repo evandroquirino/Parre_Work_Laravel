@@ -186,8 +186,8 @@
                     </tbody>
                 </table>
                 </div>
-                <a class="card col-md-3 w-100 h-100" href="/img/layouts/{{$pedido->imagem}}"> 
-                    <img src="/img/layouts/{{$pedido->imagem}}" alt="{{ $pedido->nome }}">
+                <a class="card col-md-3" href="/img/layouts/{{$pedido->imagem}}"> 
+                    <img class="w-100 h-auto" src="/img/layouts/{{$pedido->imagem}}" alt="{{ $pedido->nome }}">
                 </a>
             </div>  
             <a class="btn btn-success" href="{{ route('pedidos.index') }}">
