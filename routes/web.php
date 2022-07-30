@@ -92,10 +92,10 @@ Route::middleware([
         Route::get('/', [PedidoController::class, 'index'])->name('pedidos.index');
         Route::get('/create', [PedidoController::class, 'create'])->name('pedidos.create'); 
         Route::get('/{id}', [PedidoController::class, 'show'])->name('pedidos.show');    
-        // Route::get('/{id}/edit', [PedidoController::class, 'edit'])->name('pedido.edit');
+        Route::get('/{id}/edit', [PedidoController::class, 'edit'])->name('pedido.edit');
        
         Route::post('/', [PedidoController::class, 'store'])->name('pedido.store');
-        // Route::put('/{id}', [PedidoController::class, 'update'])->name('pedido.update');
+        Route::put('/{id}', [PedidoController::class, 'update'])->name('pedido.update');
         Route::delete('/{id}', [PedidoController::class, 'destroy'])->name('pedido.destroy');
        
     });

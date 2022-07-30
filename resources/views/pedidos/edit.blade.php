@@ -3,24 +3,27 @@
 
 @section('content')
     <h1 class="ml-3">Novo Pedido</h1>
-    <form action="{{ route('pedido.store') }}" method="POST" enctype="multipart/form-data" class="p-5">
+    <form action="{{ route('pedido.update', $pedido) }}" method="POST" enctype="multipart/form-data" class="p-5">
     @csrf
 
         <div class="md-3">
             <div class="d-flex justify-content-between md-3">
             <label for="nome" class="form-label" >Nome/Apelido</label>
             <div class="form-group d-flex">
-                <input type="date" class="form-control" id="data_pedido" name="data_pedido" value="{{$dataHoje}}">
+                <input type="date" class="form-control" id="data_pedido" name="data_pedido" value="{{$pedido->data_pedido}}">
             </div>
             </div>
-            <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite os nome do pedido" required autofocus>
+            <input type="text" class="form-control" name="nome" id="nome" value="{{$pedido->nome}}" required autofocus>
         </div>
         <div class="md-3">
             <label for="cliente" class="form-label">Cliente</label>
             <div class="d-flex">
                 <select name="cliente_id" id="cliente" class="form-control">
                     @foreach($clientes as $cliente)
-                        <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
+                        <option 
+                            value="{{ $cliente->id }}" 
+                            {{ $cliente->id == $pedido->cliente_id ? 'selected' : '' }}
+                            >{{ $cliente->nome }}</option>
                     @endforeach
                 </select>
                 <a class="btn btn-secondary btn-sm" href="{{ route('clientes.create')}}">

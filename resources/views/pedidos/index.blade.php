@@ -41,7 +41,7 @@
                         <p>{{ App\Http\Controllers\PedidoController::totaldePecas($pedido->id) }} </p>
                     </td>
                     <td style="display: flex">
-                        <a href="" class="btn btn-warning">
+                        <a href="{{ route('pedido.edit', $pedido) }}" class="btn btn-warning">
                             Editar
                         </a>
 
@@ -69,3 +69,4 @@
     </table>
     
 @endsection
+

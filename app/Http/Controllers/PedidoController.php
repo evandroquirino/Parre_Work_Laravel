@@ -8,6 +8,7 @@ use App\Models\Etapa;
 use App\Models\Pedido;
 use App\Models\Personalizacao;
 use App\Models\Tecido;
+use DateTime;
 use Illuminate\Http\Request;
 
 class PedidoController extends Controller
@@ -37,13 +38,9 @@ class PedidoController extends Controller
         $tecidos = Tecido::orderBy('nome', 'asc')->get();
         $clientes = Cliente::orderBy('nome', 'asc')->get();
         $etapas = Etapa::orderBy('nome', 'asc')->get();
-        return view('pedidos.create', [
-            'costureiras' => $costureiras,
-            'personalizacaos' => $personalizacaos,
-            'tecidos' => $tecidos,
-            'clientes' => $clientes,
-            'etapas' => $etapas
-        ]);
+        $dataHoje = new DateTime('now');
+        $dataHoje = $dataHoje->format('Y-m-d');
+        return view('pedidos.create', compact('costureiras', 'personalizacaos', 'tecidos', 'clientes', 'etapas', 'dataHoje'));
     }
 
 
@@ -135,7 +132,15 @@ class PedidoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pedido = Pedido::find($id);
+        $costureiras = ModelsCostureira::orderBy('nome', 'asc')->get();
+        $personalizacaos = Personalizacao::orderBy('nome', 'asc')->get();
+        $tecidos = Tecido::orderBy('nome', 'asc')->get();
+        $clientes = Cliente::orderBy('nome', 'asc')->get();
+        $etapas = Etapa::orderBy('nome', 'asc')->get();
+        $dataHoje = new DateTime('now');
+        $dataHoje = $dataHoje->format('Y-m-d');
+        return view('pedidos.edit', compact('pedido', 'costureiras', 'personalizacaos', 'tecidos', 'clientes', 'etapas', 'dataHoje'));
     }
 
     /**
@@ -147,7 +152,37 @@ class PedidoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pedido = Pedido::find($id);
+
+        $pedido->nome = $request->nome;
+        $pedido->costureira_id = $request->costureira_id;
+        $pedido->personalizacao_id = $request->personalizacao_id;
+        $pedido->tecido_id = $request->tecido_id;
+        $pedido->cliente_id = $request->cliente_id;
+        $pedido->etapa_id = $request->etapa_id;
+        $pedido->cor = $request->cor;
+        $pedido->detalhes = $request->detalhes;
+        $pedido->imagem = $request->imagem;
+        $pedido->data_pedido = $request->data_pedido;
+        $pedido->camisetaPP = $request->camisetaPP;
+        $pedido->camisetaP = $request->camisetaP;
+        $pedido->camisetaM = $request->camisetaM;
+        $pedido->camisetaG = $request->camisetaG;
+        $pedido->camisetaGG = $request->camisetaGG;
+        $pedido->camisetaXG = $request->camisetaXG;
+        $pedido->camisetaEXG = $request->camisetaEXG;
+        $pedido->camisetaXGG = $request->camisetaXGG;
+        $pedido->camisetaEXGG = $request->camisetaEXGG;
+        $pedido->babyPP = $request->babyPP;
+        $pedido->babyP = $request->babyP;
+        $pedido->babyM = $request->babyM;
+        $pedido->babyG = $request->babyG;
+        $pedido->babyGG = $request->babyGG;
+        $pedido->babyXG = $request->babyXG;
+        $pedido->babyEXG = $request->babyEXG;
+        $pedido->babyXGG = $request->babyXGG;
+
+        return redirect( '/pedidos' );
     }
 
     /**
@@ -171,4 +206,5 @@ class PedidoController extends Controller
         return $total;
     }
 }
+
 
