@@ -8,12 +8,12 @@
 
         <div class="md-3">
             <div class="d-flex justify-content-between md-3">
-            <label for="nome" class="form-label">Nome/Apelido</label>
+            <label for="nome" class="form-label" >Nome/Apelido</label>
             <div class="form-group d-flex">
-                <input type="date" class="form-control" id="data_pedido" name="data_pedido">
+                <input type="date" class="form-control" id="data_pedido" name="data_pedido" value="{{$dataHoje}}">
             </div>
             </div>
-            <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite os nome do pedido" required>
+            <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite os nome do pedido" required autofocus>
         </div>
         <div class="md-3">
             <label for="cliente" class="form-label">Cliente</label>
