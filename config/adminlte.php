@@ -266,7 +266,44 @@ return [
             'url'         => 'dashboard',
             'icon'        => 'fa-thin fa-users',
         ],
-        
+
+        /// multinivel
+        [
+            'text'    => 'Costureiras/Facções',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Costura interna',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Gra',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Luiz Reina',
+                    'url'  => '#',
+                ],
+            ],
+        ],     
+        [
+            'text'    => 'Personalizações',
+            'icon'    => 'fas fa-fw fa-share',
+            'submenu' => [
+                [
+                    'text' => 'Serigrafia',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Sublimação',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Bordado',
+                    'url'  => '#',
+                ],
+            ],
+        ],      
     ],
 
     /*
