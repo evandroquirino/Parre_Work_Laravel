@@ -251,59 +251,44 @@ return [
             'url'         => 'clientes',
             'icon'        => 'fa-thin fa-users',
         ],
-        [
-            'text'        => 'Costureiras/Facções',
-            'url'         => 'costureiras',
-            'icon'        => 'fa-thin fa-users',
-        ],
-        [
-            'text'        => 'Serigrafia',
-            'url'         => 'dashboard',
-            'icon'        => 'fa-thin fa-users',
-        ],
-        [
-            'text'        => 'Bordado',
-            'url'         => 'dashboard',
-            'icon'        => 'fa-thin fa-users',
-        ],
-
-        /// multinivel
-        [
-            'text'    => 'Costureiras/Facções',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Costura interna',
-                    'url'  => '#',
+        // multinivel
+            [
+                'text'    => 'Costureiras/Facções',
+                'icon'    => 'fas fa-fw fa-share',
+                'submenu' => [
+                    [
+                        'text' => 'Costura interna',
+                        'url'  => '#',
+                    ],
+                    [
+                        'text' => 'Gra',
+                        'url'  => '#',
+                    ],
+                    [
+                        'text' => 'Luiz Reina',
+                        'url'  => '#',
+                    ],
                 ],
-                [
-                    'text' => 'Gra',
-                    'url'  => '#',
+            ],     
+            [
+                'text'    => 'Personalizações',
+                'icon'    => 'fas fa-fw fa-share',
+                'submenu' => [
+                    [
+                        'text' => 'Serigrafia',
+                        'url'  => '#',
+                    ],
+                    [
+                        'text' => 'Sublimação',
+                        'url'  => '#',
+                    ],
+                    [
+                        'text' => 'Bordado',
+                        'url'  => '#',
+                    ],
                 ],
-                [
-                    'text' => 'Luiz Reina',
-                    'url'  => '#',
-                ],
-            ],
-        ],     
-        [
-            'text'    => 'Personalizações',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'Serigrafia',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'Sublimação',
-                    'url'  => '#',
-                ],
-                [
-                    'text' => 'Bordado',
-                    'url'  => '#',
-                ],
-            ],
-        ],      
+            ], 
+     
     ],
 
     /*
