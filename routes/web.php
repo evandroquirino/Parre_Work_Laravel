@@ -72,6 +72,7 @@ Route::middleware([
         Route::get('/{id}/edit', [ClienteController::class, 'edit'])->name('cliente.edit');
        
         Route::post('/', [ClienteController::class, 'store'])->name('cliente.store');
+        Route::post('/', [ClienteController::class, 'storeModal'])->name('cliente.storeModal');
         Route::put('/{id}', [ClienteController::class, 'update'])->name('cliente.update');
         Route::delete('/{id}', [ClienteController::class, 'destroy'])->name('cliente.destroy');
        

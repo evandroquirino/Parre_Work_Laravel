@@ -101,4 +101,12 @@ class ClienteController extends Controller
         $cliente->delete();
         return redirect('/clientes');
     }
+
+    public function storeModal(Request $request)
+    {
+        $dados = $request->except('_token');
+        Cliente::create($dados);
+
+        return redirect( '/pedidos/create' );
+    }
 }

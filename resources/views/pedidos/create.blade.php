@@ -23,7 +23,8 @@
                         <option value="{{ $cliente->id }}">{{ $cliente->nome }}</option>
                     @endforeach
                 </select>
-                <a class="btn btn-secondary btn-sm" href="{{ route('clientes.create')}}">
+
+                <a class="btn btn-secondary btn-sm" onclick="abreModal()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
                         <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                         <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
@@ -202,6 +203,55 @@
 
         <button class="btn btn-success">Enviar</button>
     </form>
+
+    <!-- Modal -->
+<div class="modal fade" id="NovoCliente" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content bg-dark text-white border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title">Novo Cliente</h5>
+            </div>
+            <div class="modal-body">
+            <form action="{{ route('cliente.storeModal') }}" method="post">
+                @csrf
+            <div class="col-12">
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" class="form-control bg-dark text-white border-secondary" name="nome" id="nomeModal" placeholder="Digite o nome" required>
+            </div>
+            <div class="col-12">
+                    <label for="telefone" class="form-label">Telefone:</label>
+                    <input type="text" class="form-control bg-dark text-white border-secondary" name="telefone" id="telefone" placeholder="Digite o telefone" required>
+            </div>
+            <div class="mt-2">
+                <button type="submit" id="salvar" class="btn btn-success" onclick="SalvarFecharModal()">Salvar</button>
+                <a id="FecharModal" class="btn btn-danger" onclick="fechaModal()" >Fechar</a>
+            </div>
+            </form>
+            </div>
+        </div>
+        </div>
+      </div>
+  </div>
+
+    <script>
+        function abreModal() {
+            $('#NovoCliente').modal('show');
+            $("#FecharModal").modal('hide');
+            $(":submit").on("click", function(){
+                $("#FecharModal").modal('hide');
+                });
+        }
+        function fechaModal() {
+            $('#NovoCliente').modal('hide');
+            $('#nomeModal').val('');
+            $('#telefone').val('');
+        }
+        function SalvarFecharModal() {
+            $(":submit").on("click", function(){
+                $("#NovoCliente").modal('hide');
+            });
+        }
+    </script>
 @endsection
 
 

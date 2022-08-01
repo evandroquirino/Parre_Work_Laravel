@@ -36,7 +36,7 @@ class PedidoController extends Controller
         $costureiras = ModelsCostureira::orderBy('nome', 'asc')->get();
         $personalizacaos = Personalizacao::orderBy('nome', 'asc')->get();
         $tecidos = Tecido::orderBy('nome', 'asc')->get();
-        $clientes = Cliente::orderBy('nome', 'asc')->get();
+        $clientes = Cliente::orderBy('id', 'desc')->get();
         $etapas = Etapa::orderBy('nome', 'asc')->get();
         $dataHoje = new DateTime('now');
         $dataHoje = $dataHoje->format('Y-m-d');
